@@ -1,0 +1,112 @@
+﻿@page
+@model WebApplication1.Pages.TestResultView.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>TestResultClass</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TestResultClass.SecondaryVoltage)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TestResultClass.SecondaryVoltage)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TestResultClass.Temperature)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TestResultClass.Temperature)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TestResultClass.Humidity)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TestResultClass.Humidity)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TestResultClass.TestDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TestResultClass.TestDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TestResultClass.TanFai)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TestResultClass.TanFai)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TestResultClass.R)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TestResultClass.R)
+        </dd>
+
+        <dt class="col-sm-2">
+            Table Data
+        </dt>
+        <dd class="col-sm-10">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>ao</th>
+                        <th>bo</th>
+                        <th>co</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (int i = 0; i < 5; i++)
+                    {
+                            <tr>
+                                <td>
+                                @switch (i)
+                                {
+                                    case 0:
+                                        @:f(%)
+                                        break;
+                                    case 1:
+                                        @:d(分)
+                                        break;
+                                    case 2:
+                                        @:dU(%)
+                                        break;
+                                    case 3:
+                                        @:Upt:U
+                                        break;
+                                    case 4:
+                                        @:Uyb:U
+                                        break;
+                                }
+                                </td>
+                            @for (int j = 0; j < 3; j++)
+                            {
+                                        <td>@Model.TestResultClass.TableData[i, j]</td>
+                            }
+                            </tr>
+                    }
+                </tbody>
+            </table>
+        </dd>
+
+@*         <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TestResultClass.testItem)
+        </dt> *@
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TestResultClass.testItem.Id)
+        </dd>
+    </dl>
+
+    <form method="post">
+        <input type="hidden" asp-for="TestResultClass.Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

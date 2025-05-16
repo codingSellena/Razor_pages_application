@@ -1,0 +1,66 @@
+﻿@page
+@model WebApplication1.Pages.TestResult.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<form>
+    <p>
+        <label>Title: <input type="text" asp-for="SearchString" asp-route-queryType="Id"/></label>
+        <input type="submit" value="Filter" />
+    </p>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TestResultClass[0].SecondaryVoltage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TestResultClass[0].Temperature)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TestResultClass[0].Humidity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TestResultClass[0].TestDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TestResultClass[0].testItem)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.TestResultClass) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SecondaryVoltage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Temperature)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Humidity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TestDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.testItem.Id)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,39 @@
+﻿@page
+@model WebApplication1.Pages.TestReportView.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>TestReportClass</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="TestReportClass.TestReportId" class="control-label"></label>
+                <input asp-for="TestReportClass.TestReportId" class="form-control" />
+                <span asp-validation-for="TestReportClass.TestReportId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TestReportClass.TestTime" class="control-label"></label>
+                <input asp-for="TestReportClass.TestTime" class="form-control" />
+                <span asp-validation-for="TestReportClass.TestTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

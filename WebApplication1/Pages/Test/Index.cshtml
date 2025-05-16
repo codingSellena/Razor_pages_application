@@ -1,0 +1,91 @@
+﻿@page
+@model WebApplication1.Pages.Test.IndexModel
+
+@{
+    ViewData["Title"] = "测试信息";
+}
+
+<h1>测试信息</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<form>
+    <p>
+        <label>关联设备编号: <input type="text" asp-for="SearchString" /></label>
+        <input type="submit" value="Filter" />
+    </p>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TestClass[0].Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TestClass[0].DeviceId)
+            </th>
+            @* <th>
+                @Html.DisplayNameFor(model => model.TestClass[0].TestId)
+            </th> *@
+            <th>
+                @Html.DisplayNameFor(model => model.TestClass[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TestClass[0].Mode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TestClass[0].Percentage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TestClass[0].DataLow)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TestClass[0].DataHigh)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TestClass[0].DataTest)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.TestClass) {
+        <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DeviceId)
+            </td>
+            @* <td>
+                @Html.DisplayFor(modelItem => item.TestId)
+            </td> *@
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Percentage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataLow)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataHigh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataTest)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>|
+                <a asp-page="../TestResultView/Index" asp-route-id="@item.Id"asp-route-queryType="TestId">测试结果</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

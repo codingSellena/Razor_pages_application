@@ -1,0 +1,147 @@
+﻿@page
+@model WebApplication1.Pages.DeviceView.IndexModel
+
+@{
+    ViewData["Title"] = "设备信息";
+}
+
+<h1>设备信息</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<form>
+    <p>
+        <label>被检测设备编号: <input type="text" asp-for="SearchString" /></label>
+        <input type="submit" value="Filter" />
+    </p>
+</form>
+
+<form method="get" id="testForm" asp-page="../TestReportView/Generate">
+    <div class="d-flex justify-content-between align-items-center">
+        <p id="selected-count">选中了0项</p>
+        <input type="hidden" name="DeviceId" id="DeviceIdField" />
+        <input type="hidden" name="TestIds" id="TestIdsField" />
+        <input type="hidden" name="QueryType" value="DeviceIdAndTestIds" />
+        <button type="submit" class="btn btn-secondary">测试</button>
+    </div>
+</form>
+<table class="table table-striped table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.DeviceClass[0].DeviceId)</th>
+            <th>@Html.DisplayNameFor(model => model.DeviceClass[0].Name)</th>
+            <th>@Html.DisplayNameFor(model => model.DeviceClass[0].Manufacturer)</th>
+            <th>@Html.DisplayNameFor(model => model.DeviceClass[0].Place)</th>
+            <th>@Html.DisplayNameFor(model => model.DeviceClass[0].Description)</th>
+            <th>@Html.DisplayNameFor(model => model.DeviceClass[0].DateTime)</th>
+            <th>@Html.DisplayNameFor(model => model.DeviceClass[0].TelephoneNumber)</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.DeviceClass)
+        {
+                <tr data-device-id="@item.Id">
+                    <td>@Html.DisplayFor(modelItem => item.DeviceId)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Manufacturer)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Place)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Description)</td>
+                    <td>@Html.DisplayFor(modelItem => item.DateTime)</td>
+                    <td>@Html.DisplayFor(modelItem => item.TelephoneNumber)</td>
+                    <td>
+                        <button class="btn btn-primary toggle-button" data-target="test-items-@item.Id">显示测试信息</button>
+                        <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                        <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                        <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+                <tr id="test-items-@item.Id" class="test-items" style="display:none;">
+                    <td colspan="8">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>选择</th>
+                                    <th>名称</th>
+                                    <th>百分比</th>
+                                    <th>档位</th>
+                                    <th>数据上限</th>
+                                    <th>数据下限</th>
+                                    <th>实测数据</th>
+                                    <th>测试结果</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            @foreach (var testItem in item.TestItems)
+                            {
+                                        <tr data-test-id="@testItem.Id">
+                                            <td><input type="checkbox" class="test-checkbox" data-device-id="@item.Id" data-test-id="@testItem.Id" /></td>
+                                            <td>@testItem.Name</td>
+                                            <td>@testItem.Percentage</td>
+                                            <td>@testItem.Mode</td>
+                                            <td>@testItem.DataHigh</td>
+                                            <td>@testItem.DataLow</td>
+                                            <td>@testItem.DataTest</td>
+                                            <td><a asp-page="../TestResultView/Index" asp-route-id="@testItem.Id" asp-route-queryType="TestId">测试结果</a></td>
+                                        </tr>
+                            }
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+        }
+    </tbody>
+</table>
+
+@section Scripts {
+        <script>
+            $(document).ready(function () {
+                var selectedDeviceId = null;
+
+                function updateSelectedCount() {
+                    var count = $(".test-checkbox:checked").length;
+                    $("#selected-count").text("选中了 " + count + " 项");
+                }
+
+                function updateFormFields() {
+                    var selectedTestIds = $(".test-checkbox:checked").map(function () {
+                        return $(this).data("test-id");
+                    }).get().join(",");
+                    $("#DeviceIdField").val(selectedDeviceId);
+                    $("#TestIdsField").val(selectedTestIds);
+                }
+
+                $(".toggle-button").click(function () {
+                    var target = $(this).data("target");
+                    $("#" + target).toggle();
+                    var buttonText = $(this).text() == "显示测试信息" ? "隐藏测试信息" : "显示测试信息";
+                    $(this).text(buttonText);
+                });
+
+                $(".test-checkbox").change(function () {
+                    var deviceId = $(this).data("device-id");
+                    if (this.checked) {
+                        if (selectedDeviceId === null || selectedDeviceId === deviceId) {
+                            selectedDeviceId = deviceId;
+                        } else {
+                            alert("只能选中一个设备下的测试项目。");
+                            this.checked = false;
+                        }
+                    } else {
+                        if ($(".test-checkbox:checked").length === 0) {
+                            selectedDeviceId = null;
+                        }
+                    }
+                    updateSelectedCount();
+                    updateFormFields();
+                });
+
+                $("form#testForm").submit(function () {
+                    updateFormFields();
+                });
+
+                updateSelectedCount(); // 初始加载时更新选中项数
+            });
+        </script>
+}

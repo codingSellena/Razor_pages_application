@@ -1,0 +1,58 @@
+﻿@page
+@model WebApplication1.Pages.TestReportView.IndexModel
+
+@{
+    ViewData["Title"] = "测试报告信息汇总";
+}
+
+<h1>测试报告汇总页面</h1>
+
+@* <p>
+    <a asp-page="Create">Create New</a>
+</p> *@
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                测试报告编号
+            </th>
+            <th>测试设备编号</th>
+            <th>测试项目编号</th>
+            <th>
+                测试时间
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.TestReportClass)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                    <td>
+                    @if (item.TestResults.Any())
+                    {                    
+                       <div>@item.TestResults.First().testItem.DeviceId</div>
+                    }
+                    </td>
+                        <td> 
+                           @{
+                        var testIds = string.Join("、", item.TestResults.Select(tr => tr.TestId));
+                           }
+                               <div>@testIds</div>
+                        </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TestTime)
+                </td>
+                <td>
+                    @* <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> | *@
+                    <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

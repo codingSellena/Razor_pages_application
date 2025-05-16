@@ -1,0 +1,60 @@
+﻿@page
+@model WebApplication1.Pages.DeviceView.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>DeviceClass</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="DeviceClass.Id" />
+            <div class="form-group">
+                <label asp-for="DeviceClass.Name" class="control-label"></label>
+                <input asp-for="DeviceClass.Name" class="form-control" />
+                <span asp-validation-for="DeviceClass.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DeviceClass.Manufacturer" class="control-label"></label>
+                <input asp-for="DeviceClass.Manufacturer" class="form-control" />
+                <span asp-validation-for="DeviceClass.Manufacturer" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DeviceClass.Place" class="control-label"></label>
+                <input asp-for="DeviceClass.Place" class="form-control" />
+                <span asp-validation-for="DeviceClass.Place" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DeviceClass.Description" class="control-label"></label>
+                <input asp-for="DeviceClass.Description" class="form-control" />
+                <span asp-validation-for="DeviceClass.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DeviceClass.DateTime" class="control-label"></label>
+                <input asp-for="DeviceClass.DateTime" class="form-control" type="date" value="@Model.DeviceClass.DateTime.ToString("yyyy-MM-dd")"/>
+                <span asp-validation-for="DeviceClass.DateTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DeviceClass.TelephoneNumber" class="control-label"></label>
+                <input asp-for="DeviceClass.TelephoneNumber" class="form-control" />
+                <span asp-validation-for="DeviceClass.TelephoneNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

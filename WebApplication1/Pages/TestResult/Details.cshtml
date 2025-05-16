@@ -1,0 +1,49 @@
+﻿@page
+@model WebApplication1.Pages.TestResult.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>TestResultClass</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TestResultClass.SecondaryVoltage)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TestResultClass.SecondaryVoltage)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TestResultClass.Temperature)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TestResultClass.Temperature)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TestResultClass.Humidity)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TestResultClass.Humidity)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TestResultClass.TestDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TestResultClass.TestDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TestResultClass.testItem)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TestResultClass.testItem.Id)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.TestResultClass.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

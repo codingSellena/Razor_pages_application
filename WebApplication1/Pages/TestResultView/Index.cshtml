@@ -1,0 +1,116 @@
+﻿@page
+@model WebApplication1.Pages.TestResultView.IndexModel
+
+@{
+    ViewData["Title"] = "测试结果信息";
+}
+
+<h1>测试结果信息汇总</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<form>
+    <p>
+        <label>被检测设备编号: <input type="text" asp-for="SearchString" asp-route-queryType="Id"/></label>
+        <input type="submit" value="Filter" />
+    </p>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.TestResultClass[0].Id)</th>
+            <th>@Html.DisplayName("关联设备ID")</th>
+            <th>@Html.DisplayName("关联测试项目ID")</th>
+            <th>@Html.DisplayNameFor(model => model.TestResultClass[0].SecondaryVoltage)</th>
+            <th>@Html.DisplayNameFor(model => model.TestResultClass[0].Temperature)</th>
+            <th>@Html.DisplayNameFor(model => model.TestResultClass[0].Humidity)</th>
+            <th>@Html.DisplayNameFor(model => model.TestResultClass[0].TestDate)</th>
+            <th>@Html.DisplayNameFor(model => model.TestResultClass[0].TanFai)</th>
+            <th>@Html.DisplayNameFor(model => model.TestResultClass[0].R)</th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.TestResultClass)
+        {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.Id)</td>
+                        <td>@Html.DisplayFor(modelItem => item.testItem.DeviceId)</td>
+                     <td>@Html.DisplayFor(modelItem => item.testItem.Id)</td>
+                    <td>@Html.DisplayFor(modelItem => item.SecondaryVoltage)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Temperature)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Humidity)</td>
+                    <td>@Html.DisplayFor(modelItem => item.TestDate)</td>
+                    <td>@Html.DisplayFor(modelItem => item.TanFai)</td>
+                    <td>@Html.DisplayFor(modelItem => item.R)</td>
+
+                    <td>
+                        <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                        <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                        <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a> |
+                        <button type="button" class="btn btn-info" onclick="showHideTable('@item.Id')">显示详细测试结果</button>
+                    </td>
+                </tr>
+                <tr id="details-@item.Id" style="display: none;">
+                    <td colspan="8">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>ao</th>
+                                    <th>bo</th>
+                                    <th>co</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            @for (int i = 0; i < 5; i++)
+                            {
+                                        <tr>
+                                            <td>
+                                        @switch (i)
+                                        {
+                                            case 0:
+                                                @:f(%)
+                                                break;
+                                            case 1:
+                                                @:d(分)
+                                                break;
+                                            case 2:
+                                                @:dU(%)
+                                                break;
+                                            case 3:
+                                                @:Upt:U
+                                                break;
+                                            case 4:
+                                                @:Uyb:U
+                                                break;
+                                        }
+                                            </td>
+                                    @for (int j = 0; j < 3; j++)
+                                    {
+                                                        <td>@item.TableData[i, j]</td>
+                                    }
+                                        </tr>
+                            }
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+        }
+    </tbody>
+</table>
+
+@section Scripts {
+            <script>
+                function showHideTable(id) {
+                    var element = document.getElementById('details-' + id);
+                    if (element.style.display === 'none') {
+                        element.style.display = '';
+                    } else {
+                        element.style.display = 'none';
+                    }
+                }
+    </script>
+}

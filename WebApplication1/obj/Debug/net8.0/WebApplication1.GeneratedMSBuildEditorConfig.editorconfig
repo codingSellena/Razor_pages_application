@@ -1,0 +1,187 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = WebApplication1
+build_property.RootNamespace = WebApplication1
+build_property.ProjectDir = D:\A大三课内资料\系统能力培养\junior\WebApplication1\WebApplication1\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = D:\A大三课内资料\系统能力培养\junior\WebApplication1\WebApplication1
+build_property._RazorSourceGeneratorDebug = 
+
+[D:/A大三课内资料/系统能力培养/junior/WebApplication1/WebApplication1/Pages/DeviceView/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGV2aWNlVmlld1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/A大三课内资料/系统能力培养/junior/WebApplication1/WebApplication1/Pages/DeviceView/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGV2aWNlVmlld1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/A大三课内资料/系统能力培养/junior/WebApplication1/WebApplication1/Pages/DeviceView/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGV2aWNlVmlld1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/A大三课内资料/系统能力培养/junior/WebApplication1/WebApplication1/Pages/DeviceView/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGV2aWNlVmlld1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/A大三课内资料/系统能力培养/junior/WebApplication1/WebApplication1/Pages/DeviceView/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGV2aWNlVmlld1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/A大三课内资料/系统能力培养/junior/WebApplication1/WebApplication1/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/A大三课内资料/系统能力培养/junior/WebApplication1/WebApplication1/Pages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/A大三课内资料/系统能力培养/junior/WebApplication1/WebApplication1/Pages/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/A大三课内资料/系统能力培养/junior/WebApplication1/WebApplication1/Pages/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/A大三课内资料/系统能力培养/junior/WebApplication1/WebApplication1/Pages/TestReportView/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGVzdFJlcG9ydFZpZXdcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/A大三课内资料/系统能力培养/junior/WebApplication1/WebApplication1/Pages/TestReportView/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGVzdFJlcG9ydFZpZXdcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/A大三课内资料/系统能力培养/junior/WebApplication1/WebApplication1/Pages/TestReportView/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGVzdFJlcG9ydFZpZXdcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/A大三课内资料/系统能力培养/junior/WebApplication1/WebApplication1/Pages/TestReportView/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGVzdFJlcG9ydFZpZXdcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/A大三课内资料/系统能力培养/junior/WebApplication1/WebApplication1/Pages/TestReportView/Generate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGVzdFJlcG9ydFZpZXdcR2VuZXJhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/A大三课内资料/系统能力培养/junior/WebApplication1/WebApplication1/Pages/TestReportView/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGVzdFJlcG9ydFZpZXdcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/A大三课内资料/系统能力培养/junior/WebApplication1/WebApplication1/Pages/TestResultView/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGVzdFJlc3VsdFZpZXdcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/A大三课内资料/系统能力培养/junior/WebApplication1/WebApplication1/Pages/TestResultView/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGVzdFJlc3VsdFZpZXdcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/A大三课内资料/系统能力培养/junior/WebApplication1/WebApplication1/Pages/TestResultView/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGVzdFJlc3VsdFZpZXdcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/A大三课内资料/系统能力培养/junior/WebApplication1/WebApplication1/Pages/TestResultView/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGVzdFJlc3VsdFZpZXdcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/A大三课内资料/系统能力培养/junior/WebApplication1/WebApplication1/Pages/TestResultView/Generate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGVzdFJlc3VsdFZpZXdcR2VuZXJhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/A大三课内资料/系统能力培养/junior/WebApplication1/WebApplication1/Pages/TestResultView/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGVzdFJlc3VsdFZpZXdcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/A大三课内资料/系统能力培养/junior/WebApplication1/WebApplication1/Pages/TestResultView/TestReport.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGVzdFJlc3VsdFZpZXdcVGVzdFJlcG9ydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/A大三课内资料/系统能力培养/junior/WebApplication1/WebApplication1/Pages/TestResult/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGVzdFJlc3VsdFxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/A大三课内资料/系统能力培养/junior/WebApplication1/WebApplication1/Pages/TestResult/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGVzdFJlc3VsdFxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/A大三课内资料/系统能力培养/junior/WebApplication1/WebApplication1/Pages/TestResult/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGVzdFJlc3VsdFxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/A大三课内资料/系统能力培养/junior/WebApplication1/WebApplication1/Pages/TestResult/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGVzdFJlc3VsdFxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/A大三课内资料/系统能力培养/junior/WebApplication1/WebApplication1/Pages/TestResult/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGVzdFJlc3VsdFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/A大三课内资料/系统能力培养/junior/WebApplication1/WebApplication1/Pages/TestView/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGVzdFZpZXdcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/A大三课内资料/系统能力培养/junior/WebApplication1/WebApplication1/Pages/TestView/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGVzdFZpZXdcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/A大三课内资料/系统能力培养/junior/WebApplication1/WebApplication1/Pages/TestView/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGVzdFZpZXdcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/A大三课内资料/系统能力培养/junior/WebApplication1/WebApplication1/Pages/TestView/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGVzdFZpZXdcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/A大三课内资料/系统能力培养/junior/WebApplication1/WebApplication1/Pages/TestView/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGVzdFZpZXdcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/A大三课内资料/系统能力培养/junior/WebApplication1/WebApplication1/Pages/Test/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGVzdFxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/A大三课内资料/系统能力培养/junior/WebApplication1/WebApplication1/Pages/Test/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGVzdFxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/A大三课内资料/系统能力培养/junior/WebApplication1/WebApplication1/Pages/Test/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGVzdFxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/A大三课内资料/系统能力培养/junior/WebApplication1/WebApplication1/Pages/Test/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGVzdFxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/A大三课内资料/系统能力培养/junior/WebApplication1/WebApplication1/Pages/Test/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGVzdFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/A大三课内资料/系统能力培养/junior/WebApplication1/WebApplication1/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/A大三课内资料/系统能力培养/junior/WebApplication1/WebApplication1/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/A大三课内资料/系统能力培养/junior/WebApplication1/WebApplication1/Pages/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-g6ltozs93r

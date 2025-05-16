@@ -1,0 +1,99 @@
+﻿@page
+@model WebApplication1.Pages.TestReportView.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>测试报告详细信息</h1>
+
+<h2>设备信息</h2>
+<p>设备编号: @Model.DeviceInfo?.DeviceId</p>
+<p>设备名: @Model.DeviceInfo?.Name</p>
+<p>设备生产商: @Model.DeviceInfo?.Manufacturer</p>
+
+<h2>测试报告编号：@Model.TestReport?.Id</h2>
+<p>测试时间：@Model.TestReport?.TestTime</p>
+
+@if (Model.TestReportClass.TestResults != null && Model.TestReportClass.TestResults.Any())
+{
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>测试编号</th>
+                    <th>二次电压</th>
+                    <th>温度</th>
+                    <th>湿度</th>
+                    <th>测试时间</th>
+                    <th>tan</th>
+                    <th>R</th>
+                </tr>
+            </thead>
+            <tbody>
+            @foreach (var result in Model.TestReportClass.TestResults)
+            {
+                    <tr>
+                        <td>@result.TestId</td>
+                        <td>@result.SecondaryVoltage</td>
+                        <td>@result.Temperature</td>
+                        <td>@result.Humidity</td>
+                        <td>@result.TestDate</td>
+                        <td>@result.TanFai</td>
+                        <td>@result.R</td>
+                    </tr>
+                    <tr>
+                        <td colspan="7">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>ao</th>
+                                        <th>bo</th>
+                                        <th>co</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                @for (int i = 0; i < 5; i++)
+                                {
+                                        <tr>
+                                        @switch (i)
+                                        {
+                                            case 0:
+                                                            <td>f(%)</td>
+                                                break;
+                                            case 1:
+                                                            <td>d(分)</td>
+                                                break;
+                                            case 2:
+                                                            <td>dU(%)</td>
+                                                break;
+                                            case 3:
+                                                            <td>Upt:U</td>
+                                                break;
+                                            case 4:
+                                                            <td>Uyb:U</td>
+                                                break;
+                                        }
+                                        @for (int j = 0; j < 3; j++)
+                                        {
+                                                    <td>@result.TableDataArray[i*3+j]</td>
+                                        }
+                                        </tr>
+                                }
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+            }
+            </tbody>
+        </table>
+}
+else
+{
+        <p>No test results available.</p>
+}
+
+<div>
+   @*  <a asp-page="./Edit" asp-route-id="@Model.TestReportClass.Id">Edit</a> | *@
+    <a asp-page="./Index">Back to List</a>
+</div>

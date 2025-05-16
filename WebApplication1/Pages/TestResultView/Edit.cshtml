@@ -1,0 +1,115 @@
+﻿@page
+@model WebApplication1.Pages.TestResultView.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>TestResultClass</h4>
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="TestResultClass.Id" />
+            <div class="form-group">
+                <label asp-for="TestResultClass.TestId" class="control-label"></label>
+                <select asp-for="TestResultClass.TestId" class="form-control" asp-items="ViewBag.TestId"></select>
+                <span asp-validation-for="TestResultClass.TestId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TestResultClass.SecondaryVoltage" class="control-label"></label>
+                <input asp-for="TestResultClass.SecondaryVoltage" class="form-control" />
+                <span asp-validation-for="TestResultClass.SecondaryVoltage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TestResultClass.Temperature" class="control-label"></label>
+                <input asp-for="TestResultClass.Temperature" class="form-control" />
+                <span asp-validation-for="TestResultClass.Temperature" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TestResultClass.Humidity" class="control-label"></label>
+                <input asp-for="TestResultClass.Humidity" class="form-control" />
+                <span asp-validation-for="TestResultClass.Humidity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TestResultClass.TestDate" class="control-label"></label>
+                <input asp-for="TestResultClass.TestDate" class="form-control" type="date" value="@Model.TestResultClass.TestDate.ToString("yyyy-MM-dd")"/>
+                <span asp-validation-for="TestResultClass.TestDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TestResultClass.TanFai" class="control-label"></label>
+                <input asp-for="TestResultClass.TanFai" class="form-control" />
+                <span asp-validation-for="TestResultClass.TanFai" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TestResultClass.R" class="control-label"></label>
+                <input asp-for="TestResultClass.R" class="form-control" />
+                <span asp-validation-for="TestResultClass.R" class="text-danger"></span>
+            </div>
+
+            <h4>Table Data</h4>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Label</th>
+                        <th>ao</th>
+                        <th>bo</th>
+                        <th>co</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (int i = 0; i < 5; i++)
+                    {
+                            <tr>
+                                <td>
+                                @switch (i)
+                                {
+                                    case 0:
+                                        @:f(%)
+                                        break;
+                                    case 1:
+                                        @:d(分)
+                                        break;
+                                    case 2:
+                                        @:dU(%)
+                                        break;
+                                    case 3:
+                                        @:Upt:U
+                                        break;
+                                    case 4:
+                                        @:Uyb:U
+                                        break;
+                                }
+                                </td>
+                            @for (int j = 0; j < 3; j++)
+                            {
+                                int index = i * 3 + j;
+                                        <td>
+                                            <input type="number" asp-for="TestResultClass.TableDataArray[index]" class="form-control" />
+                                            <span asp-validation-for="TestResultClass.TableDataArray[index]" class="text-danger"></span>
+                                        </td>
+                            }
+                            </tr>
+                    }
+                </tbody>
+            </table>
+
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
